@@ -1,26 +1,29 @@
-import AboutUsSection from "@/components/sections/home/about-section";
-import FullVersionSection from "@/components/sections/home/full-version-section";
-import HeroSection from "@/components/sections/home/hero-section";
-import PortfolioSection from "@/components/sections/home/portfolio-section";
-import ServicesSection from "@/components/sections/home/services";
-import ServicesSection2 from "@/components/sections/home/services-2";
-import StatsSection from "@/components/sections/home/stats";
-import Testimonials from "@/components/testimonials";
-import FooterSection from "@/components/footer";
-import ContactSection from "@/components/contact";
+import { WhySayHello } from "@/components/about/why-sayhello";
+import { HomeHero } from "@/components/hero/home-hero";
+import { PageShell } from "@/components/layout/page-shell";
+import { BrandStrip } from "@/components/portfolio/brand-strip";
+import { FeaturedWorkGrid } from "@/components/portfolio/featured-work-grid";
+import { PricingCards } from "@/components/pricing/pricing-cards";
+import { IndustriesStrip } from "@/components/services/industries-strip";
+import { ProcessFlow } from "@/components/services/process-flow";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Home",
+  description:
+    "SayHelloAI builds cinematic AI-led creative media systems for modern growth brands.",
+};
 
 export default function Home() {
   return (
-    <main className="min-h-screen">
-      <HeroSection />
-      <AboutUsSection />
-      {/* <ServicesSection /> */}
-      <ServicesSection2 />
-      <PortfolioSection />
-      <StatsSection />
-      <Testimonials />
-      <ContactSection />
-      <FooterSection />
-    </main>
+    <PageShell>
+      <HomeHero />
+      <BrandStrip />
+      <FeaturedWorkGrid />
+      <WhySayHello />
+      <ProcessFlow />
+      <IndustriesStrip />
+      <PricingCards />
+    </PageShell>
   );
 }
