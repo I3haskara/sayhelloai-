@@ -1,20 +1,45 @@
 "use client";
 
 import { motion } from "framer-motion";
+import { useTheme } from "next-themes";
+import { useEffect, useState } from "react";
+import Image from "next/image";
 import { FloatingParticles } from "@/components/shared/floating-particles";
 import { CinematicButton } from "@/components/shared/cinematic-button";
 
 const cards = ["AI UGC Video", "Game Cinematics", "Concept Art"];
 
 export function HomeHero() {
+  const { resolvedTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
+  if (!mounted) {
+    return null;
+  }
+
+  const heroImage = resolvedTheme === "dark" ? "/images/hero/hero-dark.png" : "/images/hero/hero-light.png";
+
   return (
     <section className="page-shell section-space relative">
       <div className="relative overflow-hidden rounded-[32px] border border-white/20 bg-white/60 p-8 backdrop-blur-xl dark:border-white/10 dark:bg-[#081640]/75 md:p-12 lg:p-16">
+        <div className="absolute inset-0 rounded-[32px] overflow-hidden">
+          <Image
+            src={heroImage}
+            alt="Hero background"
+            fill
+            className="object-cover"
+            priority
+          />
+        </div>
         <FloatingParticles />
         <div className="pointer-events-none absolute -left-20 top-12 h-56 w-56 rounded-full bg-[#ff6b4a]/25 blur-3xl" />
         <div className="pointer-events-none absolute right-4 top-0 h-64 w-64 rounded-full bg-[#7c3aed]/25 blur-3xl" />
 
-        <div className="relative grid items-center gap-12 lg:grid-cols-2">
+        <div className="relative z-10 grid items-center gap-12 lg:grid-cols-2">
           <div>
             <p className="caption mb-6 uppercase tracking-[0.2em] text-[#4f6084] dark:text-[#b5c0e1]">Cinematic AI Studio</p>
             <h1 className="heading-xl text-balance">We Build The Future Of Creative Media With AI.</h1>

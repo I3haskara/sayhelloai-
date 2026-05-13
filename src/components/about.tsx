@@ -48,11 +48,11 @@ export default function ContentSection() {
         </div>
         <ScrollView>
           <Image
-            className="rounded-(--radius) grayscale-75 object-cover aspect-[16/9] w-full"
+            className="rounded-(--radius) grayscale-75 object-cover object-top aspect-[4/5] w-full"
             src="/images/office.jpeg"
             alt="team image"
             height="480"
-            width="720"
+            width="600"
             loading="lazy"
           />
         </ScrollView>

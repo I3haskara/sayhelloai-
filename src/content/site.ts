@@ -101,17 +101,17 @@ export const TEAM_MEMBERS = [
   {
     name: "Rama Venkata",
     role: "Co-Founder & Creative Director",
-    image: "/images/office.jpeg",
+    image: "/images/team/Rama.png",
   },
   {
     name: "Vaishnavi Palleda",
     role: "Co-Founder & Producer Operations Lead",
-    image: "/images/portfolio/meditation.jpg",
+    image: "/images/team/Vaishnavi.png",
   },
   {
     name: "Kaushik",
     role: "Co-Founder & Product Delivery Systems",
-    image: "/images/portfolio/eco.jpg",
+    image: "/images/team/Kaushik.png",
   },
 ];
 
